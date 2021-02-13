@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './styles/App.css';
+import Login from './components/pages/Login';
+import Register from './components/pages/Register';
 import Spinner from './components/Spinner';
 
 function App() {
@@ -7,16 +9,6 @@ function App() {
   const toggleLoading = () => setLoading(!loading);
   const [dark, setDark] = useState(true);
   const toggleDark = () => setDark(!dark);
-  const [lift, setLift] = useState('Bench');
-  const selectLift = e => setLift(e.target.value);
-  const [workoutName, setWorkoutName] = useState('');
-  const reset = () => {
-    setLift('Bench');
-    setWorkoutName('');
-  };
-  const handleSubmit = e => {
-    e.preventDefault();
-  };
   return (
     <div className={`App ${dark && 'dark'}`}>
       <header>
@@ -33,29 +25,8 @@ function App() {
           <span className='slider'></span>
         </label>
       </header>
-      <form noValidate onSubmit={handleSubmit}>
-        <div className='input-container'>
-          <input
-            className='input'
-            required
-            type='workoutName'
-            value={workoutName}
-            onChange={e => setWorkoutName(e.target.value)}
-          />
-          <span class='floating-label'>Workout Name</span>
-        </div>
-        <select className='select' onChange={selectLift} value={lift}>
-          {['Bench', 'Squat', 'Deadlift'].map(option => (
-            <option className='option' value={option} key={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-        <button className='btn two' onClick={reset} disabled={!workoutName}>
-          Clear
-        </button>
-        <input className='btn one' type='submit' value='Submit' />
-      </form>
+      <Login />
+      <Register />
       {loading && <Spinner />}
     </div>
   );
