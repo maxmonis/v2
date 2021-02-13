@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './styles/App.css';
+import Spinner from './components/Spinner';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -55,7 +56,7 @@ function App() {
         </button>
         <input className='btn one' type='submit' value='Submit' />
       </form>
-      {loading && <h1>Loading...</h1>}
+      {loading && <Spinner />}
     </div>
   );
 }
