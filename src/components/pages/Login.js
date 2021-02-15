@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <form noValidate onSubmit={handleSubmit}>
       <h1>Login</h1>
-      <div className='input-container'>
+      <div className='floating-label-input'>
         <input
           className='input'
           name='email'
@@ -29,9 +29,9 @@ const Login = () => {
           value={email}
           onChange={handleChange}
         />
-        <span class='floating-label'>Email</span>
+        <span className='floating-label'>Email</span>
       </div>
-      <div className='input-container'>
+      <div className='floating-label-input'>
         <input
           className='input'
           name='password'
@@ -40,7 +40,7 @@ const Login = () => {
           value={password}
           onChange={handleChange}
         />
-        <span class='floating-label'>Password</span>
+        <span className='floating-label'>Password</span>
       </div>
       <button className='btn two' onClick={reset}>
         Cancel
