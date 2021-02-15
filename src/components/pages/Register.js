@@ -7,6 +7,7 @@ const Register = () => {
     username: '',
     email: '',
     password: '',
+    password2: '',
   };
   const {
     values,
@@ -15,9 +16,18 @@ const Register = () => {
     handleSubmit,
     handleBlur,
   } = useValidate(INITIAL_STATE, validateAccount, createAccount);
-  const { username, email, password } = values;
+  const { username, email, password, password2 } = values;
   function createAccount() {
-    console.info('username:', username, 'email:', email, 'password:', password);
+    console.info(
+      'username:',
+      username,
+      'email:',
+      email,
+      'password:',
+      password,
+      'password2',
+      password2
+    );
   }
   return (
     <div className='page'>
@@ -61,6 +71,21 @@ const Register = () => {
           />
           <span className='floating-label'>Password</span>
           {errors.password && <p className='input-error'>{errors.password}</p>}
+        </div>
+        <div className='floating-label-input'>
+          <input
+            className='input'
+            name='password2'
+            required
+            type='password'
+            value={password2}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          <span className='floating-label'>Confirm Password</span>
+          {errors.password2 && (
+            <p className='input-error'>{errors.password2}</p>
+          )}
         </div>
         <input className='btn one' type='submit' value='Submit' />
       </form>

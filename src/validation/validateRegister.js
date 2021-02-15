@@ -1,4 +1,4 @@
-const validate = ({ username, email, password }) => {
+const validate = ({ username, email, password, password2 }) => {
   let errors = {};
   if (!username) errors.username = 'Username is required';
   if (!email) {
@@ -10,6 +10,13 @@ const validate = ({ username, email, password }) => {
     errors.password = 'Password is required';
   } else if (password.length < 6) {
     errors.password = 'Minimum password length is 6';
+  }
+  if (!password2) {
+    errors.password2 = 'Password is required';
+  } else if (password2 !== password) {
+    errors.password2 = 'Passwords must match';
+  } else if (password2.length < 6) {
+    errors.password2 = 'Minimum password length is 6';
   }
   return errors;
 };
