@@ -5,12 +5,14 @@
 }
 
 :root {
-  --blue1: #F0F8FF;
-  --blue2: #1E90FF;
-  --blue3: #00538C;
-  
+  --blue1: #f0f8ff;
+  --blue2: #1e90ff;
+  --blue3: #00538c;
+
   --grey1: #cad2d8;
   --grey2: #232f39;
+
+  --red: #e04040;
 
   --white: #ffffff;
 
@@ -19,15 +21,15 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+    monospace;
 }
 
 header {

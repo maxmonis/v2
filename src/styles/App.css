@@ -88,6 +88,12 @@
   color: var(--grey1);
 }
 
+.input-error {
+  color: var(--red);
+  font-size: 12px;
+  text-align: left;
+}
+
 .floating-label-input {
   margin: 1rem auto;
   position: relative;

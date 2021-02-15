@@ -1,22 +1,22 @@
-import { useState } from 'react';
+import useValidate from '../../hooks/useValidate';
+import validateLogin from '../../validation/validateLogin';
 
 const Login = () => {
-  const [user, setUser] = useState({
+  const INITIAL_STATE = {
     email: '',
     password: '',
-  });
-  const reset = () =>
-    setUser({
-      email: '',
-      password: '',
-    });
-  const { email, password } = user;
-  const handleChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value });
   };
-  const handleSubmit = e => {
-    e.preventDefault();
-  };
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    handleBlur,
+  } = useValidate(INITIAL_STATE, validateLogin, logUserIn);
+  const { email, password } = values;
+  function logUserIn() {
+    console.info('email:', email, 'password:', password);
+  }
   return (
     <form noValidate onSubmit={handleSubmit}>
       <h1>Login</h1>
@@ -25,11 +25,13 @@ const Login = () => {
           className='input'
           name='email'
           required
-          type='email'
+          type='text'
           value={email}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
         <span className='floating-label'>Email</span>
+        {errors.email && <p className='input-error'>{errors.email}</p>}
       </div>
       <div className='floating-label-input'>
         <input
@@ -39,13 +41,12 @@ const Login = () => {
           type='password'
           value={password}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
         <span className='floating-label'>Password</span>
+        {errors.password && <p className='input-error'>{errors.password}</p>}
       </div>
-      <button className='btn two' onClick={reset}>
-        Cancel
-      </button>
-      <input className='btn one' type='submit' value='Submit' />
+      <input className='btn one' type='submit' value='Access Account' />
     </form>
   );
 };
