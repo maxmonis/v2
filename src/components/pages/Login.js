@@ -1,6 +1,7 @@
 import useValidate from '../../hooks/useValidate';
 import validateLogin from '../../validation/validateLogin';
 import { Link } from 'react-router-dom';
+import { Input } from '../UI';
 
 const Login = () => {
   const INITIAL_STATE = {
@@ -22,33 +23,26 @@ const Login = () => {
     <div className='page'>
       <form noValidate onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <div className='floating-label-input'>
-          <input
-            className='input'
-            name='email'
-            required
-            type='text'
-            value={email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <span className='floating-label'>Email</span>
-          {errors.email && <p className='input-error'>{errors.email}</p>}
-        </div>
-        <div className='floating-label-input'>
-          <input
-            className='input'
-            name='password'
-            required
-            type='password'
-            value={password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <span className='floating-label'>Password</span>
-          {errors.password && <p className='input-error'>{errors.password}</p>}
-        </div>
-        <input className='btn one' type='submit' value='Access Account' />
+        <Input
+          name='email'
+          value={email}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='Email'
+          error={errors.email}
+        />
+        <Input
+          name='password'
+          value={password}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          type='password'
+          label='Password'
+          error={errors.password}
+        />
+        <button className='btn one' type='submit'>
+          Access Account
+        </button>
       </form>
       <h3>Need an account?</h3>
       <Link className='link' to='register'>

@@ -1,6 +1,7 @@
 import useValidate from '../../hooks/useValidate';
 import validateAccount from '../../validation/validateRegister';
 import { Link } from 'react-router-dom';
+import { Input } from '../UI';
 
 const Register = () => {
   const INITIAL_STATE = {
@@ -33,61 +34,43 @@ const Register = () => {
     <div className='page'>
       <form noValidate onSubmit={handleSubmit}>
         <h1>Register</h1>
-        <div className='floating-label-input'>
-          <input
-            className='input'
-            name='username'
-            required
-            type='text'
-            value={username}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <span className='floating-label'>Username</span>
-          {errors.username && <p className='input-error'>{errors.username}</p>}
-        </div>
-        <div className='floating-label-input'>
-          <input
-            className='input'
-            name='email'
-            required
-            type='text'
-            value={email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <span className='floating-label'>Email</span>
-          {errors.email && <p className='input-error'>{errors.email}</p>}
-        </div>
-        <div className='floating-label-input'>
-          <input
-            className='input'
-            name='password'
-            required
-            type='password'
-            value={password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <span className='floating-label'>Password</span>
-          {errors.password && <p className='input-error'>{errors.password}</p>}
-        </div>
-        <div className='floating-label-input'>
-          <input
-            className='input'
-            name='password2'
-            required
-            type='password'
-            value={password2}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <span className='floating-label'>Confirm Password</span>
-          {errors.password2 && (
-            <p className='input-error'>{errors.password2}</p>
-          )}
-        </div>
-        <input className='btn one' type='submit' value='Submit' />
+        <Input
+          name='username'
+          value={username}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='Username'
+          error={errors.username}
+        />
+        <Input
+          name='email'
+          value={email}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          label='Email'
+          error={errors.email}
+        />
+        <Input
+          name='password'
+          value={password}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          type='password'
+          label='Password'
+          error={errors.password}
+        />
+        <Input
+          name='password2'
+          value={password2}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          type='password'
+          label='Confirm Password'
+          error={errors.password2}
+        />
+        <button className='btn one' type='submit'>
+          Create Account
+        </button>
       </form>
       <h3>Already a member?</h3>
       <Link className='link' to='login'>

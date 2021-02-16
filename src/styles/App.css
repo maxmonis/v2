@@ -3,14 +3,13 @@
   font-weight: 500;
   justify-content: center;
   min-height: 100vh;
-  padding: 50px;
+  overflow: scroll;
+  padding: 25px;
+  position: absolute;
   text-align: center;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-}
-.App.light {
-  background-color: var(--white);
-  color: var(--grey2);
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  width: 100%;
 }
 .App.dark {
   background-color: var(--grey2);
@@ -91,29 +90,6 @@
 .input-error {
   color: var(--red);
   font-size: 12px;
-  text-align: left;
-}
-
-.floating-label-input {
-  margin: 1rem auto;
-  position: relative;
-  width: max-content;
-}
-.input:focus + .floating-label,
-.input:not(:focus):valid + .floating-label {
-  color: var(--blue2);
-  font-size: 12px;
-  left: 8px;
-  opacity: 1;
-  top: -16px;
-}
-.floating-label {
-  color: var(--grey1);
-  left: 8px;
-  pointer-events: none;
-  position: absolute;
-  top: 8px;
-  transition: 0.2s ease all;
 }
 
 /* Link */
@@ -182,58 +158,6 @@
   position: fixed;
   transition: transform 350ms ease-in;
   transform: translate(-100%);
-}
-
-/* Switch */
-
-.switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
-.switch input {
-  height: 0;
-  opacity: 0;
-  width: 0;
-}
-.slider {
-  background-color: var(--grey1);
-  bottom: 0;
-  border-radius: 34px;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-}
-.slider:before {
-  background-color: var(--white);
-  border-radius: 50%;
-  bottom: 4px;
-  content: '';
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: 0.4s;
-  -webkit-transition: 0.4s;
-  width: 26px;
-}
-input:checked + .slider {
-  background-color: var(--blue3);
-}
-input:hover + .slider {
-  background-color: var(--blue2);
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--blue2);
-}
-input:checked + .slider:before {
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-  -webkit-transform: translateX(26px);
 }
 
 /* Tooltips */
