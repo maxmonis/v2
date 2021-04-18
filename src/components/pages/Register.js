@@ -31,9 +31,10 @@ const Register = () => {
     );
   }
   return (
-    <div className='page'>
+    <div className='page auth'>
+      <h1>Welcome!</h1>
+      <h4>Create your free account</h4>
       <form noValidate onSubmit={handleSubmit}>
-        <h1>Register</h1>
         <Input
           name='username'
           value={username}
@@ -72,8 +73,8 @@ const Register = () => {
           Create Account
         </button>
       </form>
-      <h3>Already a member?</h3>
-      <Link className='link' to='login'>
+      <h6>Already a member?</h6>
+      <Link to='login'>
         <button className='btn two'>Sign in</button>
       </Link>
     </div>

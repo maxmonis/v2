@@ -1,0 +1,21 @@
+.auth {
+  color: var(--white);
+  margin: 36px auto;
+}
+.auth a {
+  color: var(--white);
+}
+.auth button {
+  text-transform: uppercase;
+}
+.auth form {
+  padding: 16px 0;
+}
+.auth h6 {
+  margin: 12px 0 6px;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+}

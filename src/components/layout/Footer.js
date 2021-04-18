@@ -1,12 +1,8 @@
-const Footer = ({ loading, toggleLoading }) => (
+const Footer = () => (
   <footer>
-    <p
-      className='link tooltip top'
-      tooltip-content={`Set loading to ${!loading}`}
-      onClick={toggleLoading}>
-      Toggle Loading
-    </p>
-    <h6>© Max Monis {new Date().getFullYear()}</h6>
+    <a href='https://github.com/maxmonis' target='_blank' rel='noreferrer'>
+      © Max Monis {new Date().getFullYear()}
+    </a>
   </footer>
 );
 

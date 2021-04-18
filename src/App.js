@@ -6,11 +6,8 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
-import { Spinner } from './components/UI';
 
 function App() {
-  const [loading, setLoading] = useState(false);
-  const toggleLoading = () => setLoading(!loading);
   const [dark, setDark] = useState(true);
   const toggleDark = () => setDark(!dark);
   return (
@@ -33,9 +30,8 @@ function App() {
             </TransitionGroup>
           )}
         />
-        <Footer loading={loading} toggleLoading={toggleLoading} />
+        <Footer />
       </Router>
-      {loading && <Spinner />}
     </div>
   );
 }

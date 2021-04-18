@@ -20,9 +20,10 @@ const Login = () => {
     console.info('email:', email, 'password:', password);
   }
   return (
-    <div className='page'>
+    <div className='page auth'>
+      <h1>Welcome Back!</h1>
+      <h4>Please enter your credentials</h4>
       <form noValidate onSubmit={handleSubmit}>
-        <h1>Login</h1>
         <Input
           name='email'
           value={email}
@@ -44,8 +45,8 @@ const Login = () => {
           Access Account
         </button>
       </form>
-      <h3>Need an account?</h3>
-      <Link className='link' to='register'>
+      <h6>Need an account?</h6>
+      <Link to='register'>
         <button className='btn two'>Get started</button>
       </Link>
     </div>
